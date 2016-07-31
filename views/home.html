@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="container">
+
+    <h2>Recent Albums</h2>
+    <div class="row">
+      <div class="col-md-4" ng-repeat="album in albums">
+        <div class="card">
+            <a href="#/albums/{{$index+1}}" class="thumbnail">ID: {{ album.id }} Title: {{ album.title }}</a>
+            
+          
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

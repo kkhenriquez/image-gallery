@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="container">
+
+    <h2>Photos in Album</h2>
+    <div class="row">
+      <div class="col-md-4" ng-repeat="photo in photos">
+        <div class="card">
+          <img ng-src="{{ photo.thumbnailUrl }}">
+          <p>{{ photo.albumId }} {{ photo.title }}</p>
+            
+          
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
