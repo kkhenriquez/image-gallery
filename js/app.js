@@ -1,4 +1,4 @@
-var app = angular.module('GalleryApp', ['ngRoute']);
+var app = angular.module('GalleryApp', ['ngRoute', 'angularModalService', 'ui.bootstrap']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
@@ -25,4 +25,4 @@ var makeService = function(module, identifier) {
 				return data;
 			});
 	}]);
-}
+};

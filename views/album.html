@@ -1,13 +1,29 @@
 <div class="main">
-  <div class="container">
+
+  <div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <p> {{ albums[0].title }} </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <div class="container">
 
     <h2>Photos in Album</h2>
     <div class="row">
-      <div class="col-md-4" ng-repeat="photo in photos">
+      <div class="col-md-3" ng-repeat="photo in photos">
         <div class="card">
           <img ng-src="{{ photo.thumbnailUrl }}">
-          <p>{{ photo.albumId }} {{ photo.title }}</p>
-            
+          <p>{{ photo.title }}</p>
+          <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+          
           
         </div>
 
@@ -15,4 +31,10 @@
     </div>
 
   </div>
+
+    
+    
+</div>
+  
+
 </div>

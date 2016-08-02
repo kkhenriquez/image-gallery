@@ -21,7 +21,15 @@
 	<!-- Loading Angular libs -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
-	
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
+
+		<!-- Angular Bootstrap -->
+	<script src="js/ui-bootstrap-2.0.0.min.js"></script>
+	<script src="js/ui-bootstrap-custom-tpls-2.0.0.min.js"></script>
+
 </head>
 
 <body ng-app="GalleryApp">
@@ -31,6 +39,8 @@
 			<h1>Aqui va el header. <small><a href="#/">Home</a></small></h1>
 		</div>
 	</header>
+
+
 		
 	
 	<div ng-view></div>
@@ -43,6 +53,7 @@
 	<!-- Controllers -->
 	<script src="js/controllers/HomeController.js"></script>
 	<script src="js/controllers/AlbumController.js"></script>
+	<script src="js/controllers/ModalController.js"></script>
 
 	<!-- Services -->
 	<script src="js/services/albums.js"></script>
