@@ -1,4 +1,4 @@
-var app = angular.module('GalleryApp', ['ngRoute', 'angularModalService', 'ui.bootstrap']);
+var app = angular.module('GalleryApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
@@ -14,6 +14,7 @@ app.config(function ($routeProvider) {
 			redirectTo: '/'
 		});
 });
+
 
 var makeService = function(module, identifier) {
 	module.factory('photos-'+identifier, ['$http', function($http) {

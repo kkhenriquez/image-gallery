@@ -5,7 +5,10 @@ app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log, fotos, $route
     $log.info('success');
   });
 
+
+
   $scope.animationsEnabled = true;
+
 
   $scope.open = function (photo) {
 
