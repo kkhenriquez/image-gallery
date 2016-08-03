@@ -1,22 +1,22 @@
-app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log, albums) {
+app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log, fotos, $routeParams) {
 
-  albums.success(function(data) {
-    $scope.albums = data;
+  fotos.getPhotos($routeParams.id).success(function(data) {
+    $scope.fotos = data;
     $log.info('success');
   });
 
   $scope.animationsEnabled = true;
 
-  $scope.open = function (size) {
+  $scope.open = function (photo) {
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'myModalContent.html',
       controller: 'ModalInstanceCtrl',
-      size: size,
+      size: 'lg',
       resolve: {
         items: function () {
-          return $scope.albums;
+          return photo;
         }
       }
     });
@@ -39,7 +39,7 @@ app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log, albums) {
 
 app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
-  $scope.albums = items;
+  $scope.foto = items;
 
 
   $scope.ok = function () {
