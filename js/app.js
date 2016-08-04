@@ -1,4 +1,4 @@
-var app = angular.module('GalleryApp', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('GalleryApp', ['ngRoute', 'ui.bootstrap', 'bootstrapLightbox', 'ngSanitize']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
@@ -14,6 +14,10 @@ app.config(function ($routeProvider) {
 			redirectTo: '/'
 		});
 });
+
+app.config(function (LightboxProvider) {
+	LightboxProvider.templateUrl = 'views/box.html'
+})
 
 
 var makeService = function(module, identifier) {

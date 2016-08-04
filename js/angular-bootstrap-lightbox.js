@@ -115,6 +115,21 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
     return image.caption;
   };
 
+  //This is a modification I made. KH
+
+  /**
+   * @param    {*} image An element in the array of images.
+   * @return   {String} The title of the given image.
+   * @type     {Function}
+   * @name     getImageTitle
+   * @memberOf bootstrapLightbox.Lightbox
+   */
+  this.getImageTitle = function (image) {
+    return image.title;
+  };
+
+  //End of modification
+
   /**
    * Calculate the max and min limits to the width and height of the displayed
    *   image (all are optional). The max dimensions override the min
@@ -173,7 +188,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
     // 200px = arbitrary min height
     // 66px = 32px as above
     //        + 34px outer height of .lightbox-nav
-    var height = Math.max(200, dimensions.imageDisplayHeight + 66);
+    var height = Math.max(200, dimensions.imageDisplayHeight + 116);
 
     // first case:  the modal width cannot be larger than the window width
     //              20px = arbitrary value larger than the vertical scrollbar
@@ -189,8 +204,8 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
     }
 
     return {
-      'width': width,
-      'height': height
+      'width': width, //Modification
+      'height': 'auto' //Modification
     };
   };
 
@@ -258,6 +273,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
     Lightbox.calculateModalDimensions = this.calculateModalDimensions;
     Lightbox.isVideo = this.isVideo;
     Lightbox.isSharedVideo = this.isSharedVideo;
+    Lightbox.getImageTitle = this.getImageTitle; //Modification. KH
 
     /**
      * Whether keyboard navigation is currently enabled for navigating through
@@ -348,6 +364,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
         Lightbox.image = {};
         Lightbox.imageUrl = null;
         Lightbox.imageCaption = null;
+        Lightbox.title = null; //Modification. KH
 
         Lightbox.keyboardNavEnabled = false;
 
@@ -394,6 +411,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
 
       var image = Lightbox.images[newIndex];
       var imageUrl = Lightbox.getImageUrl(image);
+      var title = Lightbox.getImageTitle(image); //Modification. KH
 
       var success = function (properties) {
         // update service properties for the image
@@ -403,6 +421,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
         Lightbox.imageUrl = properties.imageUrl || imageUrl;
         Lightbox.imageCaption = properties.imageCaption ||
           Lightbox.getImageCaption(image);
+        Lightbox.title = properties.title || title; //Modification. KH
 
         // restore the loading flag and complete the loading bar
         Lightbox.loading = false;

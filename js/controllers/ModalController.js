@@ -1,9 +1,13 @@
-app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log, fotos, $routeParams) {
+app.controller('ModalDemoCtrl', function ($scope, $uibModal, $log, fotos, $routeParams, Lightbox) {
 
   fotos.getPhotos($routeParams.id).success(function(data) {
     $scope.fotos = data;
     $log.info('success');
   });
+
+  $scope.openLightboxModal = function (index) {
+    Lightbox.openModal($scope.fotos, index);
+  };
 
 
 

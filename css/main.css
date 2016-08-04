@@ -1,17 +1,51 @@
+body {
+	background: #F2F3F4;
+}
+
 header {
-  background: #00bcd4;
+  background: #303030;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center; }
-  header img {
-    margin: 20px auto;
-    padding: 20px 0;
-    text-align: center; }
+  text-align: center; 
+  color: #ffffff;
+  padding: 20px 0 30px;
+}
+  header small {
+    color: rgba(255,255,255,0.7);}
 
 .card {
 	min-height: 200px;
 }
 
-.home-card {
-	min-height: 70px;
+.grid {
+	padding-right: 4px;
+	padding-left: 4px;
+}
 
+.home-card .thumbnail-card {
+  background-color: white;
+  border: none;
+  border-radius: 0px;
+  min-height: 140px;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.home-card .thumbnail-card .album-id {
+	background: #3F51B5;
+  color: white;
+  padding: 16px;
+  font-size: 1em;
+  height: 48px;
+  margin: 0;
+}
+
+.home-card .thumbnail-card .album-title {
+  color: rgba(0,0,0,0.87);
+  padding: 16px;
+  margin: 0;
+}
+
+.home-card .thumbnail-card:hover {
+	text-decoration: none;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
