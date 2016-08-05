@@ -1,39 +1,16 @@
 <div class="main">
+  <div class="container">
 
-  <div ng-controller="ModalDemoCtrl">
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">{{ foto.title }}</h3>
-        </div>
-        <div class="modal-body text-center">
-            <img ng-src="{{ foto.url }}"
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-
-    <div class="container">
-
-    <h2>Photos in Album</h2>
+    <h2>Photos in Album {{ photos[0].albumId }}</h2>
     <div class="row">
       <div class="col-md-3 col-xs-6" ng-repeat="photo in photos">
         <div class="card">
-          <a class="thumbnail" ng-click="openLightboxModal($index)"><img ng-src="{{ photo.thumbnailUrl }}"></a>
-          
-          
-          
+          <a class="thumbnail" ng-click="openLightboxModal($index)">
+            <img ng-src="{{ photo.thumbnailUrl }}">
+          </a>
         </div>
-
       </div>
     </div>
 
   </div>
-
-    
-    
-</div>
-  
-
 </div>

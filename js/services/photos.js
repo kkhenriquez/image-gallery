@@ -1,9 +1,15 @@
 app.factory('photos', ['$http', function($http) {
-	return $http.get('http://jsonplaceholder.typicode.com/photos')
-		.success(function(data) {
-			return data;
-		})
-		.error(function(data) {
-			return data;
-		});
+
+	return {
+		getPhotos: function(id) {
+			return $http.get('https://jsonplaceholder.typicode.com/photos?albumId='+id)
+				.success(function(data) {
+					return data;
+				})
+				.error(function(data) {
+					return data;
+				});
+		}
+	}
+	
 }]);

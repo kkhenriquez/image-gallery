@@ -1,4 +1,4 @@
-var app = angular.module('GalleryApp', ['ngRoute', 'ui.bootstrap', 'bootstrapLightbox', 'ngSanitize']);
+var app = angular.module('GalleryApp', ['ngRoute', 'bootstrapLightbox', 'ngSanitize']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
@@ -17,17 +17,4 @@ app.config(function ($routeProvider) {
 
 app.config(function (LightboxProvider) {
 	LightboxProvider.templateUrl = 'views/box.html'
-})
-
-
-var makeService = function(module, identifier) {
-	module.factory('photos-'+identifier, ['$http', function($http) {
-		return $http.get('https://jsonplaceholder.typicode.com/albums/identifier/photos')
-			.success(function(data) {
-				return data;
-			})
-			.error(function(data) {
-				return data;
-			});
-	}]);
-};
+});
