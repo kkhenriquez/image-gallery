@@ -1,9 +1,11 @@
 app.controller('HomeController', ['$scope', 'albums', function($scope, albums) {
-
+	
+	// Get the albums
 	albums.success(function(data) {
 		$scope.albums = data;
 	});
 
+	// List of possible colors for the album card background
 	$scope.doc_classes_colors = _.shuffle([
 		'#E91E63',
 		'#9C27B0',

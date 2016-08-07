@@ -1,5 +1,7 @@
+// Declare the module
 var app = angular.module('GalleryApp', ['ngRoute', 'bootstrapLightbox', 'ngSanitize']);
 
+// Configure the routes
 app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
@@ -15,6 +17,7 @@ app.config(function ($routeProvider) {
 		});
 });
 
+//Set the new template for Lightbox
 app.config(function (LightboxProvider) {
 	LightboxProvider.templateUrl = 'views/box.html'
 });

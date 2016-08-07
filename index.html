@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Load stylesheet for Lightbox -->
 	<link rel="stylesheet" type="text/css" href="css/angular-bootstrap-lightbox.css">
+	<!-- Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Passion+One" rel="stylesheet">
 	<!-- Load main.css -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	
@@ -23,8 +25,26 @@
 
 	<!-- Loading Angular libs -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-sanitize.min.js"></script>
+
+	<!-- Additional Scripts (Third party)-->
+	<script src="js/angular-bootstrap-lightbox.js"></script>	
+	<script src="js/ui-bootstrap-custom-tpls-2.0.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+
+	<!-- App files -->
+	<!-- Modules -->
+	<script src="js/app.js"></script>
+
+	<!-- Services -->
+	<script src="js/services/albums.js"></script>
+	<script src="js/services/photos.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/controllers/HomeController.js"></script>
+	<script src="js/controllers/AlbumController.js"></script>
+	<!-- End of app files -->
 
 </head>
 
@@ -32,7 +52,7 @@
 
 	<header>
 		<div class="container">
-			<h1>Image Gallery. <small><a href="#/">Home</a></small></h1>
+			<h1>Image Gallery</h1>
 		</div>
 	</header>
 
@@ -40,27 +60,10 @@
 
 	<footer>
 		<div class="container text-center">
-			<p>Crafted by <a href="http://kkhenriquez.github.io">Kevin Henriquez</a>.</p>
+			<hr>
+			<p>Crafted by <a href="http://kkhenriquez.github.io" target="_blank">Kevin Henriquez</a>.</p>
 		</div>
 	</footer>
-
-	<!-- Modules -->
-	<script src="js/app.js"></script>
-
-	<!-- Controllers -->
-	<script src="js/controllers/HomeController.js"></script>
-	<script src="js/controllers/AlbumController.js"></script>
-	<!-- <script src="js/controllers/ModalController.js"></script> -->
-
-	<!-- Services -->
-	<script src="js/services/albums.js"></script>
-	<script src="js/services/photos.js"></script>
-
-
-	<!-- Additional Scripts -->
-	<script src="js/ui-bootstrap-custom-tpls-2.0.0.min.js"></script>
-	<script src="js/angular-bootstrap-lightbox.js"></script>
-	<script src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
 
 </body>
 </html>

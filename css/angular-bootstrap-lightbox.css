@@ -1,23 +1,16 @@
 .lightbox-nav {
-  position: relative;
-  margin: 12px 0; /* the font-size of .btn-xs */ /* Modification */
-  height: 22px;
+  /* Modification */
   text-align: center;
   font-size: 0; /* prevent the otherwise inherited font-size and line-height from adding extra space to the bottom of this div */
 }
 
 .lightbox-nav .btn-group {
-  vertical-align: top;
+  vertical-align: center; /* Modification */
 }
 
 .lightbox-title-container {
   position: relative;
   margin-bottom: 12px; /* the font-size of .btn-xs */ /* Modification */
-  height: 22px;
-}
-
-.lightbox-title-container .title{
-  width: 90%
 }
 
 .lightbox-title-container .close {
